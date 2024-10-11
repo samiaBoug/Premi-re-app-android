@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Projet-Carte de visite</string>
+    <string name="description">"L'oléiculture est une tradition profondément enracinée à Taounate, où les techniques de culture et de transformation sont transmises de génération en génération. Les anciens moulins en pierre, encore utilisés aujourd'hui, témoignent de l'importance historique de cette production pour les communautés locales. \n En plus de l'huile d'olive, la culture des figues de Barbarie et la production de produits dérivés comme l'huile de figue de Barbarie constituent également des éléments caractéristiques de l'agriculture locale, bien que l'huile d'olive reste le produit phare. "</string>
+    <string name="title">Histoire et tradition</string>
+    <string name="name">L\'huile d\'olive de Taounate</string>
+    <string name="createBy">Créer par : BOUGTOUB Samia</string>
 </resources>
