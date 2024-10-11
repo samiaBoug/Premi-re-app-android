@@ -7,7 +7,9 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -16,6 +18,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -36,7 +39,6 @@ class MainActivity : ComponentActivity() {
                         name = stringResource(R.string.name),
                         title = stringResource(R.string.title) ,
                         history = stringResource(R.string.description) ,
-                        createBy = stringResource(R.string.createBy)
 
                     )
 
@@ -46,26 +48,34 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun CarteVisite(name: String,title : String , history : String ,createBy : String , modifier: Modifier = Modifier) {
-    val image = painterResource(R.drawable.t_l_chargement)
+fun CarteVisite(name: String,title : String , history : String ,modifier: Modifier = Modifier) {
+    val image = painterResource(R.drawable.huileolive)
+    Box{
+        val backgrounImg = painterResource(R.drawable.pexels_eberhardgross_2086351)
+        Image (
+            painter = backgrounImg ,
+            contentDescription = null ,
+            alpha = 0.5f ,
+            contentScale = ContentScale.Crop
+
+        )
     Column (
         modifier = modifier
             .fillMaxSize()
             .padding(9.dp)
-            .background(Color(0xFF5D7052)),
-        verticalArrangement = Arrangement.SpaceBetween ,
-        horizontalAlignment = Alignment.CenterHorizontally
+           ,
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
     ){
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center,
-           modifier = modifier.padding(top = 20.dp)
-        )
-        {
-            Image(
-                painter = image,
-                contentDescription = null
-            )
+
+
+            Box(modifier = modifier.border(2.dp , Color(0xFF5D7052))) {
+                Image(
+                    painter = image,
+                    contentDescription = null ,
+                )
+            }
+
             Text(
                 text = name,
                 fontSize = 16.sp,
@@ -79,25 +89,22 @@ fun CarteVisite(name: String,title : String , history : String ,createBy : Strin
                 modifier = Modifier.padding(8.dp)
 
             )
+
             Text(
                 text = history,
-                fontSize = 11.sp,
-                modifier = Modifier.padding(start = 20.dp, end = 20.dp)
-
-            )
-
-        }
-
-
-        Column{
-            Text(
-                text = createBy,
+                fontSize = 16.sp,
+                modifier = Modifier.padding(start = 20.dp, end = 20.dp),
 
                 )
+
+
         }
-    }
 
 
+
+
+
+}
 }
 
 @Preview(showBackground = true)
@@ -108,7 +115,6 @@ fun CarteVisitePreview() {
             name = stringResource(R.string.name),
             title = stringResource(R.string.title) ,
             history = stringResource(R.string.description) ,
-            createBy = stringResource(R.string.createBy)
 
         )
     }
